@@ -17,7 +17,7 @@ sendmail(
 );
 
 app.get("/", (req, res) => {
-  res.send("test2");
+  res.send("test3");
 });
 
 app.listen(port, () => {

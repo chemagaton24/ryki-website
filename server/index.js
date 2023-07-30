@@ -15,7 +15,7 @@ const mailOptions = {
   from: "chembeeragaton@gmail.com",
   to: "chembeeragaton@gmail.com",
   subject: "sending email using nodejs",
-  text: "hello and thank you 2",
+  text: "hello and thank you 5",
 };
 
 app.get("/", (req, res) => {
@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
     }
   });
 
-  res.send("test4");
+  res.send("test5");
 });
 
 app.listen(port, () => {

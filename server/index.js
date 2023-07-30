@@ -15,7 +15,7 @@ const mailOptions = {
   from: "chembeeragaton@gmail.com",
   to: "chembeeragaton@gmail.com",
   subject: "sending email using nodejs",
-  text: "hello and thank you",
+  text: "hello and thank you 2",
 };
 
 transporter.sendMail(mailOptions, function (error, info) {
@@ -27,7 +27,7 @@ transporter.sendMail(mailOptions, function (error, info) {
 });
 
 app.get("/", (req, res) => {
-  res.send("test3");
+  res.send("test4");
 });
 
 app.listen(port, () => {

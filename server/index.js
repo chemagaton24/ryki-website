@@ -18,15 +18,15 @@ const mailOptions = {
   text: "hello and thank you 2",
 };
 
-transporter.sendMail(mailOptions, function (error, info) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("email sent: " + info.response);
-  }
-});
-
 app.get("/", (req, res) => {
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("email sent: " + info.response);
+    }
+  });
+
   res.send("test4");
 });
 

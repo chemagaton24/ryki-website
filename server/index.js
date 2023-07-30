@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 const mailOptions = {
   from: "chembeeragaton@gmail.com",
-  to: "admin@ryki.io, chembeeragaton@gmail.com",
+  to: "chembeeragaton@gmail.com",
   subject: "Sent from ryki contact form endpoint",
   text: "Test sending email success!",
 };

@@ -1,0 +1,29 @@
+@import "../../assets/scss/abstracts.init";
+
+.kyc-aml-policy-block {
+  &__header {
+    color: $blue-5;
+    font-family: $montserrat;
+    font-size: rem(32);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: $neutral-5;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.24px;
+    margin-bottom: 20px;
+  }
+}
+
+.kyc-aml-policy-modal {
+  .modal-block__content-control {
+    max-height: 632px;
+    padding-right: 32px;
+  }
+}

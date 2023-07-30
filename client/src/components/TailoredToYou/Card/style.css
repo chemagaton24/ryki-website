@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Open+Sans:wght@400;700&family=Ubuntu&display=swap");
+.tailored-to-you-card-block {
+  border-radius: 2px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+  min-width: 280px;
+  padding: 40px 32px;
+}
+@media only screen and (max-width: 768px) {
+  .tailored-to-you-card-block {
+    padding: 56px 32px 40px 32px;
+  }
+}
+.tailored-to-you-card-block__icon {
+  margin-bottom: 32px;
+}
+.tailored-to-you-card-block__large-text {
+  color: #3075b1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 100%;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+}
+@media only screen and (min-width: 768px) {
+  .tailored-to-you-card-block__large-text {
+    font-size: 1.5rem;
+  }
+}
+.tailored-to-you-card-block__description {
+  color: #4e5461;
+  font-weight: 400;
+  line-height: 140%;
+  margin-bottom: 2px;
+  font-size: 0.75rem;
+}
+@media only screen and (min-width: 768px) {
+  .tailored-to-you-card-block__description {
+    font-size: 0.875rem;
+  }
+}

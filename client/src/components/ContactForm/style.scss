@@ -1,0 +1,58 @@
+@import "../../assets/scss/abstracts.init";
+
+.contact-form-block {
+  &__heading {
+    color: $blue-5;
+    font-family: $montserrat;
+    font-size: rem(32);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 16px;
+
+    span {
+      color: $blue-2;
+    }
+  }
+
+  &__instruction {
+    font-size: rem(12);
+    line-height: 160%;
+    color: $neutral-5;
+    margin-bottom: 16px;
+  }
+
+  &__field {
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    &-error-message {
+      font-size: 13px;
+      margin-top: 12px;
+      color: $red-1;
+    }
+  }
+
+  &__submit {
+    background-color: $blue-2;
+    font-size: rem(14);
+    width: 160px;
+    height: 56px;
+
+    .button-block__label {
+      color: $neutral-0;
+      font-family: $montserrat;
+      font-size: rem(14);
+      font-weight: 500;
+    }
+
+    &-wrap {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

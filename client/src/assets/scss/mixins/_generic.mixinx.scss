@@ -1,0 +1,15 @@
+@mixin container-wrap {
+  max-width: 1512px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 24px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 0 32px;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    padding: 0 48px;
+  }
+}

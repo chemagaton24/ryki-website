@@ -1,0 +1,38 @@
+@import "../../../assets/scss/abstracts.init";
+
+.footer-block {
+  padding-block: 56px;
+  background-color: $blue-4;
+  color: $neutral-0;
+  font-family: $montserrat;
+
+  .container {
+    @include container-wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  &__nav {
+    &-ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      column-gap: 24px;
+    }
+
+    &-link {
+      color: $blue-1;
+      font-size: rem(14);
+      line-height: rem(22);
+      text-decoration: underline;
+    }
+  }
+
+  &__long-text,
+  &__copyright {
+    font-size: rem(12);
+    line-height: 160%;
+    letter-spacing: rem(-0.24);
+  }
+}

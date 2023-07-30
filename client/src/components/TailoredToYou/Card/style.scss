@@ -1,0 +1,44 @@
+@import "../../../assets/scss/abstracts.init";
+
+.tailored-to-you-card-block {
+  border-radius: 2px;
+  background: $neutral-1;
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+  min-width: 280px;
+  padding: 40px 32px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 56px 32px 40px 32px;
+  }
+
+  &__icon {
+    margin-bottom: 32px;
+  }
+
+  &__large-text {
+    color: $blue-3;
+    font-family: $montserrat;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 16px;
+    font-size: rem(20);
+
+    @media only screen and (min-width: 768px) {
+      font-size: rem(24);
+    }
+  }
+
+  &__description {
+    color: $neutral-5;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 2px;
+    font-size: rem(12);
+
+    @media only screen and (min-width: 768px) {
+      font-size: rem(14);
+    }
+  }
+}

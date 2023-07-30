@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Open+Sans:wght@400;700&family=Ubuntu&display=swap");
+.contact-form-block__heading {
+  color: #0f1b2a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 100%;
+  margin-bottom: 16px;
+}
+.contact-form-block__heading span {
+  color: #3c8bd2;
+}
+.contact-form-block__instruction {
+  font-size: 0.75rem;
+  line-height: 160%;
+  color: #4e5461;
+  margin-bottom: 16px;
+}
+.contact-form-block__field-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-bottom: 32px;
+}
+.contact-form-block__field-error-message {
+  font-size: 13px;
+  margin-top: 12px;
+  color: #f74444;
+}
+.contact-form-block__submit {
+  background-color: #3c8bd2;
+  font-size: 0.875rem;
+  width: 160px;
+  height: 56px;
+}
+.contact-form-block__submit .button-block__label {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.contact-form-block__submit-wrap {
+  display: flex;
+  justify-content: flex-end;
+}

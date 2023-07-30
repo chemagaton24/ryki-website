@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Open+Sans:wght@400;700&family=Ubuntu&display=swap");
+.button-block {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  border-radius: 2px;
+  background: #3beffb;
+  border: 0;
+  height: 56px;
+  width: 160px;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .button-block {
+    width: 200px;
+    height: 64px;
+  }
+}
+.button-block__label {
+  color: #0f1b2a;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 100%;
+  font-size: 0.875rem;
+}
+@media only screen and (min-width: 768px) {
+  .button-block__label {
+    font-size: 1rem;
+  }
+}

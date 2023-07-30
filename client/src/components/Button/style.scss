@@ -1,0 +1,31 @@
+@import "../../assets/scss/abstracts.init";
+
+.button-block {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  border-radius: 2px;
+  background: $blue-1;
+  border: 0;
+  height: 56px;
+  width: 160px;
+  cursor: pointer;
+
+  @media only screen and (min-width: 768px) {
+    width: 200px;
+    height: 64px;
+  }
+
+  &__label {
+    color: $blue-5;
+    font-family: $montserrat;
+    font-weight: 600;
+    line-height: 100%;
+    font-size: rem(14);
+
+    @media only screen and (min-width: 768px) {
+      font-size: rem(16);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../../assets/scss/abstracts.init";
+
+.header-block {
+  background-color: $blue-5;
+  height: 64px;
+
+  @media only screen and (min-width: 768px) {
+    background-color: $blue-4;
+    height: 72px;
+  }
+}

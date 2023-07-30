@@ -14,8 +14,8 @@ const transporter = nodemailer.createTransport({
 const mailOptions = {
   from: "chembeeragaton@gmail.com",
   to: "chembeeragaton@gmail.com",
-  subject: "sending email using nodejs",
-  text: "hello and thank you 5",
+  subject: "Sent from ryki contact form endpoint",
+  text: "Test sending email success!",
 };
 
 app.get("/", (req, res) => {

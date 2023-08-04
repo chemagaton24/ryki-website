@@ -56,16 +56,18 @@ const ContactForm = () => {
     setIsSubmitted(false);
     setIsisMessageSent(false);
 
-    axios.post("http://localhost:4000/api", data).then((res) => {
-      if (res.status === 200) {
-        setIsLoading(false);
-        setIsSubmitted(true);
-        setIsisMessageSent(true);
-      } else {
-        setIsSubmitted(true);
-        setIsisMessageSent(false);
-      }
-    });
+    axios
+      .post("https://ryki-website-server.vercel.app/api", data)
+      .then((res) => {
+        if (res.status === 200) {
+          setIsLoading(false);
+          setIsSubmitted(true);
+          setIsisMessageSent(true);
+        } else {
+          setIsSubmitted(true);
+          setIsisMessageSent(false);
+        }
+      });
   };
 
   return (

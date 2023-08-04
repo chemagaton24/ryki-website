@@ -31,7 +31,7 @@ app.post("/api", (req, res) => {
       name: "Ryki",
       address: "admin@ryki.io",
     },
-    to: "chembeeragaton@gmail.com",
+    to: "admin@ryki.io",
     subject: "Ryki - A message from Contact Form",
     text: `
     Name: ${name}

@@ -57,7 +57,7 @@ const ContactForm = () => {
     setIsisMessageSent(false);
 
     axios
-      .post("https://ryki-website-server.vercel.app/api", data)
+      .post<FormValues>("https://ryki-website-server.vercel.app/api", data)
       .then((res) => {
         if (res.status === 200) {
           setIsLoading(false);

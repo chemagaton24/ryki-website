@@ -15,6 +15,21 @@
     }
   }
 
+  &__validation-message {
+    color: $blue-5;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 24px;
+
+    &--success {
+      border: 1px solid $green-1;
+    }
+
+    &--error {
+      border: 1px solid $red-1;
+    }
+  }
+
   &__instruction {
     font-size: rem(12);
     line-height: 160%;

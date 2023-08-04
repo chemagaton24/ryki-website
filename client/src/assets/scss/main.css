@@ -62,3 +62,73 @@ textarea {
   padding: 16px;
   resize: none;
 }
+
+.lds-ring {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.lds-ring span {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0 0 0 24px;
+}
+
+.dd-number-list {
+  counter-reset: item;
+  counter-reset: listStyle;
+}
+.dd-number-list > dt {
+  counter-increment: item;
+  counter-increment: listStyle;
+  margin-bottom: 16px;
+}
+.dd-number-list > dt:not(:first-child) {
+  margin-top: 16px;
+}
+.dd-number-list > dt:before {
+  content: counter(listStyle, upper-alpha) ". ";
+}
+.dd-number-list > dd {
+  counter-increment: item;
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+.dd-number-list > dd:before {
+  content: counters(item, ".") ". ";
+}

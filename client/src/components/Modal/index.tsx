@@ -3,16 +3,14 @@ import { useDispatch } from "react-redux";
 import { close } from "../../redux/features/modalSlice";
 import "./style.css";
 
-interface DOMEvent<T extends EventTarget> extends Event {
-  readonly target: T;
-}
-
 const Modal = ({
   children,
   classes,
+  hasScroll,
 }: {
   children: ReactNode;
   classes?: string;
+  hasScroll?: boolean;
 }) => {
   const dispatch = useDispatch();
   const modalControlRef = useRef<HTMLDivElement>(null);
@@ -61,38 +59,48 @@ const Modal = ({
     };
   }, [modalControlRef]);
 
+  const classList = [
+    "modal-block",
+    classes ? classes : "",
+    hasScroll ? "modal-block--has-scroll" : "modal-block--no-scroll",
+  ];
+
   return (
-    <div className={"modal-block" + (classes ? ` ${classes}` : "")}>
-      <div
-        className="modal-block__overlay"
-        onClick={() => dispatch(close())}
-      ></div>
-      <div className="modal-block__popup">
-        <div className="modal-block__header">
-          <button
-            className="modal-block__close-btn"
-            aria-label="Close Modal"
-            onClick={() => dispatch(close())}
-          >
-            <span className="icon icon-close"></span>
-          </button>
-        </div>
-        <div className="modal-block__content">
-          <div
-            className={
-              "modal-block__content-outer" +
-              (isMaxScroll ? " modal-block__content-outer--max-scroll" : "")
-            }
-          >
+    <div className={classList.join(" ")}>
+      <div className="modal-block__inner">
+        <div
+          className="modal-block__overlay"
+          onClick={() => dispatch(close())}
+        ></div>
+        <div className="modal-block__popup">
+          <div className="modal-block__header">
+            <button
+              className="modal-block__close-btn"
+              aria-label="Close Modal"
+              onClick={() => dispatch(close())}
+            >
+              <span className="icon icon-close"></span>
+            </button>
+          </div>
+          <div className="modal-block__content">
             <div
               className={
-                "modal-block__content-control" +
-                (isMaxScroll ? " modal-block__content-control--max-scroll" : "")
+                "modal-block__content-outer" +
+                (isMaxScroll ? " modal-block__content-outer--max-scroll" : "")
               }
-              ref={modalControlRef}
             >
-              <div className="modal-block__content-inner" ref={modalInnerRef}>
-                {children}
+              <div
+                className={
+                  "modal-block__content-control" +
+                  (isMaxScroll
+                    ? " modal-block__content-control--max-scroll"
+                    : "")
+                }
+                ref={modalControlRef}
+              >
+                <div className="modal-block__content-inner" ref={modalInnerRef}>
+                  {children}
+                </div>
               </div>
             </div>
           </div>

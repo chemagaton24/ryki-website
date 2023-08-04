@@ -1,35 +1,56 @@
 const express = require("express");
 const app = express();
-const port = 6000;
+const cors = require("cors");
 const nodemailer = require("nodemailer");
+require("dotenv").config();
+const PORT = 4000;
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "chembeeragaton@gmail.com",
-    pass: "ibpymdbsxgxjesra",
+    user: process.env.USER,
+    pass: process.env.PASS,
   },
 });
 
-const mailOptions = {
-  from: "chembeeragaton@gmail.com",
-  to: "chembeeragaton@gmail.com",
-  subject: "Sent from ryki contact form endpoint",
-  text: "Test sending email success!",
-};
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+  })
+);
 
-app.get("/", (req, res) => {
-  transporter.sendMail(mailOptions, function (error, info) {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post("/api", (req, res) => {
+  const { name, email, telephone, message } = req.body;
+
+  const mailOptions = {
+    from: {
+      name: "Ryki",
+      address: "admin@ryki.io",
+    },
+    to: "chembeeragaton@gmail.com",
+    subject: "Ryki - A message from Contact Form",
+    text: `
+    Name: ${name}
+    Email: ${email}
+    Telephone: ${telephone}
+    Message: ${message}`,
+  };
+
+  transporter.sendMail(mailOptions, (error) => {
     if (error) {
-      console.log(error);
+      res
+        .status(500)
+        .json({ status: "error", message: "Something went wrong!" });
     } else {
-      console.log("email sent: " + info.response);
+      res.status(200).json({ status: "ok", message: "Email Sent!" });
     }
   });
-
-  res.send("test6");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });

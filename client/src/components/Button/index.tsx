@@ -1,14 +1,34 @@
 import { ButtonHTMLAttributes } from "react";
 import "./style.css";
 
-const Button = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
-  const { children, className, ...rest } = props;
+interface ButtonProps {
+  isLoading?: boolean;
+}
+
+const Button = (
+  props: ButtonHTMLAttributes<HTMLButtonElement> & ButtonProps
+) => {
+  const { children, className, isLoading, ...rest } = props;
+  const classList = [
+    "button-block",
+    className ? className : "",
+    isLoading ? "button-block--loading" : "",
+  ];
   return (
     <button
       type="button"
-      className={`button-block${className ? " " + className : ""}`}
+      className={classList.join(" ")}
       {...rest}
+      disabled={isLoading}
     >
+      {isLoading && (
+        <span className="buttn-block__icon-loading lds-ring">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      )}
       <span className="button-block__label">{children}</span>
     </button>
   );

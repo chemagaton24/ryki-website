@@ -31,6 +31,8 @@
   justify-content: flex-start;
   -moz-column-gap: 24px;
        column-gap: 24px;
+  margin: 0;
+  padding: 0;
 }
 .footer-block__nav-link {
   color: #3beffb;

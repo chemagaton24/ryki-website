@@ -3,6 +3,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
   padding: 0px 20px;
   border-radius: 2px;
   background: #3beffb;
@@ -16,6 +18,11 @@
     width: 200px;
     height: 64px;
   }
+}
+.button-block:disabled {
+  background-color: #90c2ef;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 .button-block__label {
   color: #0f1b2a;

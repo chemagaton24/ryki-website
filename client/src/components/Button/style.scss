@@ -4,6 +4,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  column-gap: 8px;
   padding: 0px 20px;
   border-radius: 2px;
   background: $blue-1;
@@ -15,6 +16,12 @@
   @media only screen and (min-width: 768px) {
     width: 200px;
     height: 64px;
+  }
+
+  &:disabled {
+    background-color: $blue-6;
+    pointer-events: none;
+    cursor: not-allowed;
   }
 
   &__label {

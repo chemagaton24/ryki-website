@@ -11,6 +11,18 @@
 .contact-form-block__heading span {
   color: #3c8bd2;
 }
+.contact-form-block__validation-message {
+  color: #0f1b2a;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.contact-form-block__validation-message--success {
+  border: 1px solid #1c9e1c;
+}
+.contact-form-block__validation-message--error {
+  border: 1px solid #f74444;
+}
 .contact-form-block__instruction {
   font-size: 0.75rem;
   line-height: 160%;

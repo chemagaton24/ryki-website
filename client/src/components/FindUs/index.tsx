@@ -12,6 +12,7 @@ import LocationIcon from "./images/get-in-touch/location.icon.svg";
 import Button from "../Button";
 import { open } from "../../redux/features/modalSlice";
 import { useDispatch } from "react-redux";
+import { MutableRefObject, useRef } from "react";
 
 const usefulLinksList = [
   {
@@ -33,6 +34,15 @@ const usefulLinksList = [
 
 const FindUs = () => {
   const dispatch = useDispatch();
+  const canadaPinRef = useRef<HTMLButtonElement | null>(null);
+  const camayanIslandRef = useRef<HTMLButtonElement | null>(null);
+  const britishVirginIslandsRef = useRef<HTMLButtonElement | null>(null);
+
+  const activatePinLocationFn = (
+    a: MutableRefObject<HTMLButtonElement | null>
+  ) => {
+    console.log(a);
+  };
 
   return (
     <div className="find-us-block">
@@ -42,6 +52,8 @@ const FindUs = () => {
             aria-label="pin"
             type="button"
             className="find-us-block__map-pin-btn find-us-block__map-pin-btn--active find-us-block__map-pin-btn--pin-1"
+            onClick={() => activatePinLocationFn(canadaPinRef)}
+            ref={canadaPinRef}
           >
             <span className="icon icon-pin"></span>
             <span className="find-us-block__map-pin-location find-us-block__map-pin-location--canada">
@@ -52,6 +64,8 @@ const FindUs = () => {
             aria-label="pin"
             type="button"
             className="find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-2"
+            onClick={() => activatePinLocationFn(camayanIslandRef)}
+            ref={camayanIslandRef}
           >
             <span className="icon icon-pin"></span>
           </button>
@@ -59,6 +73,8 @@ const FindUs = () => {
             aria-label="pin"
             type="button"
             className="find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-3"
+            onClick={() => activatePinLocationFn(britishVirginIslandsRef)}
+            ref={britishVirginIslandsRef}
           >
             <span className="icon icon-pin"></span>
           </button>

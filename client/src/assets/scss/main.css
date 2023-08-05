@@ -154,11 +154,18 @@ ul {
 .scroll-animate__left-origin {
   transform: translateX(-50%);
 }
+.scroll-animate__right-origin {
+  transform: translateX(50%);
+}
 .scroll-animate__bottom-origin {
   transform: translateY(50%);
 }
 
 .section-visible .scroll-animate__left-origin {
+  transform: translateX(0);
+  opacity: 1;
+}
+.section-visible .scroll-animate__right-origin {
   transform: translateX(0);
   opacity: 1;
 }

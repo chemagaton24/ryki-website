@@ -148,6 +148,10 @@ ul {
     transform: translateX(-50%);
   }
 
+  &__right-origin {
+    transform: translateX(50%);
+  }
+
   &__bottom-origin {
     transform: translateY(50%);
   }
@@ -156,6 +160,11 @@ ul {
 .section-visible {
   .scroll-animate {
     &__left-origin {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    &__right-origin {
       transform: translateX(0);
       opacity: 1;
     }

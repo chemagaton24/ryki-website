@@ -147,3 +147,22 @@ ul {
     transform: translate(50%, 0);
   }
 }
+.scroll-animate {
+  transition: all 1000ms ease;
+  opacity: 0;
+}
+.scroll-animate__left-origin {
+  transform: translateX(-50%);
+}
+.scroll-animate__bottom-origin {
+  transform: translateY(50%);
+}
+
+.section-visible .scroll-animate__left-origin {
+  transform: translateX(0);
+  opacity: 1;
+}
+.section-visible .scroll-animate__bottom-origin {
+  transform: translateY(0);
+  opacity: 1;
+}

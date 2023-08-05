@@ -15,11 +15,25 @@ const Layout = () => {
   const modals = useSelector((state: RootState) => state.modal.modalsList);
 
   const scrollFn = () => {
-    // console.log(1);
+    const sections = document.querySelectorAll("section");
+    if (sections !== null) {
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const viewHeight = Math.max(
+          document.documentElement.clientHeight,
+          window.innerHeight
+        );
+        if (!(rect.bottom < 0 || rect.top - viewHeight / 2 >= 0)) {
+          console.log(section);
+          section.classList.add("section-visible");
+        }
+      });
+    }
   };
 
   useEffect(() => {
     document.addEventListener("scroll", scrollFn);
+    scrollFn();
 
     return () => document.removeEventListener("scroll", scrollFn);
   }, []);

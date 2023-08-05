@@ -41,7 +41,7 @@ const TailoredToYou = () => (
       <div className="tailored-to-you-block__bg-pattern tailored-to-you-block__bg-pattern--4"></div>
     </div>
     <div className="container">
-      <div className="tailored-to-you-block__intro">
+      <div className="tailored-to-you-block__intro scroll-animate scroll-animate__left-origin">
         <div className="tailored-to-you-block__large-text">
           Personal account coverage
         </div>
@@ -55,7 +55,7 @@ const TailoredToYou = () => (
           </strong>
         </p>
       </div>
-      <div className="tailored-to-you-block__card-list-scroller">
+      <div className="tailored-to-you-block__card-list-scroller scroll-animate scroll-animate__bottom-origin">
         <ul className="tailored-to-you-block__card-list">
           {cardList.map((item, key) => (
             <li key={key}>

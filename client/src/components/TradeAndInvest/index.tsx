@@ -3,7 +3,7 @@ import "./style.css";
 const TradeAndInvest = () => (
   <section className="trade-and-invest-block">
     <div className="container">
-      <div className="trade-and-invest-block__intro">
+      <div className="trade-and-invest-block__intro scroll-animate scroll-animate__left-origin">
         <div className="trade-and-invest-block__large-text">
           A white glove service to securely
         </div>

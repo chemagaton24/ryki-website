@@ -89,14 +89,16 @@ const FindUs = () => {
         </div>
       </div>
       <div className="container">
-        <div className="row content-row">
-          <div className="find-us-block__large-text">Where to</div>
-          <h2 className="find-us-block__heading">find us</h2>
-          <p className="find-us-block__description">
-            Select Juristiction to check details of our offices and partners.
-          </p>
+        <div className="row content-row scroll-animate scroll-animate__left-origin">
+          <div className="find-us-block__intro">
+            <div className="find-us-block__large-text">Where to</div>
+            <h2 className="find-us-block__heading">find us</h2>
+            <p className="find-us-block__description">
+              Select Juristiction to check details of our offices and partners.
+            </p>
+          </div>
         </div>
-        <div className="row content-row">
+        <div className="row content-row scroll-animate scroll-animate__left-origin">
           <h3 className="find-us-block__partners-heading">Our Partners</h3>
           <div className="find-us-block__partners-logos">
             {currentLocation.ourPartners.map((item, key) => (
@@ -106,7 +108,7 @@ const FindUs = () => {
             ))}
           </div>
         </div>
-        <div className="row content-row">
+        <div className="row content-row scroll-animate scroll-animate__left-origin">
           <h3 className="find-us-block__useful-links-heading">Useful links</h3>
           <ul className="find-us-block__useful-links-list">
             {usefulLinksList.map((item, key) => (
@@ -116,7 +118,7 @@ const FindUs = () => {
             ))}
           </ul>
         </div>
-        <div className="row content-row">
+        <div className="row content-row scroll-animate scroll-animate__left-origin">
           <h3 className="find-us-block__get-in-touch-heading">Get in touch</h3>
           {currentLocation.getInTouch.registrationInfo && (
             <div className="find-us-block__get-in-touch-sub-text">

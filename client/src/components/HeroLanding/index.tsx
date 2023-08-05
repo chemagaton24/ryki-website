@@ -9,7 +9,7 @@ const HeroLanding = () => {
   return (
     <section className="hero-landing-block">
       <div className="container">
-        <div className="hero-landing-block__intro">
+        <div className="hero-landing-block__intro scroll-animate scroll-animate__left-origin">
           <h1 className="hero-landing-block__heading">
             Premium digital asset trading
           </h1>

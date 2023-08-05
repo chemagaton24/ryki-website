@@ -139,3 +139,30 @@ ul {
     transform: translate(50%, 0);
   }
 }
+
+.scroll-animate {
+  transition: all 1000ms ease;
+  opacity: 0;
+
+  &__left-origin {
+    transform: translateX(-50%);
+  }
+
+  &__bottom-origin {
+    transform: translateY(50%);
+  }
+}
+
+.section-visible {
+  .scroll-animate {
+    &__left-origin {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    &__bottom-origin {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

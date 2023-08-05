@@ -11,11 +11,12 @@ export type GetInTouchType = {
 
 export type LocationsType =
   | "canada"
-  | "cayman-island"
+  | "cayman-islands"
   | "british-virgin-islands";
 
 export type LocationDataType = {
   location: LocationsType;
   ourPartners: OurPartnersType[];
   getInTouch: GetInTouchType;
+  isActive: boolean;
 };

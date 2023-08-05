@@ -88,8 +88,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     max-width: 440px;
-    border-top: 1px solid $neutral-7;
-    border-left: 1px solid $neutral-7;
     box-sizing: border-box;
 
     @media only screen and (min-width: 768px) {
@@ -104,8 +102,7 @@
       background-color: $neutral-0;
       grid-column: span 1;
       height: 96px;
-      border-right: 1px solid $neutral-7;
-      border-bottom: 1px solid $neutral-7;
+      outline: 1px solid $neutral-7;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -261,52 +258,8 @@
       }
     }
 
-    &-pin-location {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, -100%);
-      display: inline-block;
-      box-sizing: border-box;
-      background: rgba(60, 139, 210, 0.7);
-      height: 96px;
-      padding: 16px 40px 0px 40px;
-      color: $neutral-0;
-      font-family: $montserrat;
-      font-size: rem(16);
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: rem(-0.32);
-      border-radius: 2px;
-
-      &:before {
-        content: "";
-        display: block;
-        background-image: url("./images/map/countries/canada.icon.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 32px;
-        height: 32px;
-        margin: 0 auto 8px;
-      }
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        width: 0px;
-        height: 0px;
-        border-style: solid;
-        border-width: 4px 6.5px 0 6.5px;
-        border-color: rgba(60, 139, 210, 0.7) transparent transparent
-          transparent;
-        transform: rotate(0deg) translate(-50%, 100%);
-      }
-    }
-
     &-pin-btn {
+      $pin-btn: &;
       display: inline-flex;
       position: absolute;
       transform: translateX(50%);
@@ -415,6 +368,58 @@
           background-image: url("./images/map/pin-active.icon.svg");
           width: 48px;
           height: 56px;
+        }
+      }
+
+      &-location {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        box-sizing: border-box;
+        background: rgba(60, 139, 210, 0.7);
+        padding: 16px 40px 24px 40px;
+        color: $neutral-0;
+        font-family: $montserrat;
+        font-size: rem(16);
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: rem(-0.32);
+        border-radius: 2px;
+
+        #{$pin-btn}--active & {
+          display: inline-block;
+        }
+
+        span {
+          white-space: nowrap;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          background-image: url("./images/map/countries/canada.icon.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 32px;
+          height: 32px;
+          margin: 0 auto 8px;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 0px;
+          height: 0px;
+          border-style: solid;
+          border-width: 4px 6.5px 0 6.5px;
+          border-color: rgba(60, 139, 210, 0.7) transparent transparent
+            transparent;
+          transform: rotate(0deg) translate(-50%, 100%);
         }
       }
     }

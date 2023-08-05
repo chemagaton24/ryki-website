@@ -53,14 +53,16 @@ const Footer = () => {
           </nav>
         </div>
         <div className="row">
-          <p className="footer-block__long-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem
-            mauris, condimentum ut tincidunt sed, dapibus vel lacus. Aliquam
-            volutpat eros diam, ut volutpat elit vehicula vel. Morbi bibendum
-            pellentesque mollis. Morbi quis libero viverra, ullamcorper elit
-            vel, sollicitudin magna. Vestibulum imperdiet vitae tellus laoreet
-            posuere.
-          </p>
+          <div className="footer-block__long-text">
+            RYKI INC.
+            <br />
+            (226) 240-7189
+            <br />
+            139 Northfield Drive W. Suite 3<br />
+            Waterloo, ON, Canada, N2L 5A6
+            <br />
+            FINTRAC MSB Registration #M19525430
+          </div>
           <br />
           <div className="footer-block__copyright">
             © 2023. For information, contact Ryki Inc.

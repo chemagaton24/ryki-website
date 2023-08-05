@@ -22,6 +22,13 @@ const FindUs = () => {
     const locationIndex = locationData.findIndex(
       (a) => a.location === location
     );
+    for (let i = 0; i < locationData.length; i++) {
+      if (locationIndex === i) {
+        locationData[locationIndex].isActive = true;
+      } else {
+        locationData[i].isActive = false;
+      }
+    }
     setCurrentLocation(locationData[locationIndex]);
   };
 
@@ -32,32 +39,52 @@ const FindUs = () => {
           <button
             aria-label="pin"
             type="button"
-            className="find-us-block__map-pin-btn find-us-block__map-pin-btn--active find-us-block__map-pin-btn--pin-1"
+            className={`find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-1${
+              currentLocation.location === "canada" && currentLocation.isActive
+                ? " find-us-block__map-pin-btn--active"
+                : ""
+            }`}
             onClick={() => activatePinLocationFn("canada")}
             ref={canadaPinRef}
           >
             <span className="icon icon-pin"></span>
-            <span className="find-us-block__map-pin-location find-us-block__map-pin-location--canada">
+            <span className="find-us-block__map-pin-btn-location find-us-block__map-pin-btn-location--canada">
               Canada
             </span>
           </button>
           <button
             aria-label="pin"
             type="button"
-            className="find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-2"
-            onClick={() => activatePinLocationFn("cayman-island")}
+            className={`find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-2${
+              currentLocation.location === "cayman-islands" &&
+              currentLocation.isActive
+                ? " find-us-block__map-pin-btn--active"
+                : ""
+            }`}
+            onClick={() => activatePinLocationFn("cayman-islands")}
             ref={camayanIslandRef}
           >
             <span className="icon icon-pin"></span>
+            <span className="find-us-block__map-pin-btn-location find-us-block__map-pin-btn-location--canada">
+              Cayman Islands
+            </span>
           </button>
           <button
             aria-label="pin"
             type="button"
-            className="find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-3"
+            className={`find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-3${
+              currentLocation.location === "british-virgin-islands" &&
+              currentLocation.isActive
+                ? " find-us-block__map-pin-btn--active"
+                : ""
+            }`}
             onClick={() => activatePinLocationFn("british-virgin-islands")}
             ref={britishVirginIslandsRef}
           >
             <span className="icon icon-pin"></span>
+            <span className="find-us-block__map-pin-btn-location find-us-block__map-pin-btn-location--canada">
+              <span>British Virgin</span> Islands
+            </span>
           </button>
         </div>
       </div>

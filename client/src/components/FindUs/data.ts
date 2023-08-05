@@ -10,6 +10,8 @@ import DentonsLogo from "./images/partners/dentons.logo.svg";
 import RSMLogo from "./images/partners/rsm.logo.svg";
 import CIMALogo from "./images/partners/cima.logo.svg";
 
+import AppleByLogo from "./images/partners/appleby.logo.svg";
+
 import KycAmlPolicyIcon from "./images/useful-links/kyc-aml-policy.icon.svg";
 import PrivacyPolicyIcon from "./images/useful-links/privacy-policy.icon.svg";
 import TermsConditionsIcon from "./images/useful-links/terms-conditions.icon.svg";
@@ -58,9 +60,10 @@ export const locationData: LocationDataType[] = [
       phone: "(226) 240-7189",
       address: "139 Northfield Drive W. Suite 3. Waterloo, ON, Canada, N2L 5A6",
     },
+    isActive: true,
   },
   {
-    location: "cayman-island",
+    location: "cayman-islands",
     ourPartners: [
       {
         logo: ProvenanceLogo,
@@ -85,25 +88,18 @@ export const locationData: LocationDataType[] = [
       address:
         "DDM Corporate Ltd, 3rd Floor One Capital Place, PO Box 10190 Grand Cayman, Cayman Islands",
     },
+    isActive: false,
   },
   {
     location: "british-virgin-islands",
     ourPartners: [
       {
-        logo: MnpLogo,
-        alt: "MNP Logo",
+        logo: AppleByLogo,
+        alt: "Appleby Logo",
       },
       {
-        logo: AmlShopLogo,
-        alt: "The AML Shop Logo",
-      },
-      {
-        logo: FaskenLogo,
-        alt: "Fasken Logo",
-      },
-      {
-        logo: FintracCanafeLogo,
-        alt: "Fintrac Canafe Logo",
+        logo: ProvenanceLogo,
+        alt: "Provenance Logo",
       },
     ],
     getInTouch: {
@@ -111,5 +107,6 @@ export const locationData: LocationDataType[] = [
       address:
         "Trinity Chambers, PO 4031 Road Town, Tortola, British Virgin Islands",
     },
+    isActive: false,
   },
 ];

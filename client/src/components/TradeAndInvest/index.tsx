@@ -1,7 +1,7 @@
 import "./style.css";
 
 const TradeAndInvest = () => (
-  <div className="trade-and-invest-block">
+  <section className="trade-and-invest-block">
     <div className="container">
       <div className="trade-and-invest-block__intro">
         <div className="trade-and-invest-block__large-text">
@@ -18,7 +18,7 @@ const TradeAndInvest = () => (
         </p>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default TradeAndInvest;

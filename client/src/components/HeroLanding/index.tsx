@@ -7,7 +7,7 @@ const HeroLanding = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="hero-landing-block">
+    <section className="hero-landing-block">
       <div className="container">
         <div className="hero-landing-block__intro">
           <h1 className="hero-landing-block__heading">
@@ -23,7 +23,7 @@ const HeroLanding = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

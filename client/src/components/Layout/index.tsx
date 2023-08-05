@@ -8,15 +8,30 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import KycAmlPolicy from "../KycAmlPolicy";
 import PrivacyPolicy from "../PrivacyPolicy";
+import { useEffect } from "react";
 
 const Layout = () => {
   const isModalOpen = useSelector((state: RootState) => state.modal.modalOpen);
   const modals = useSelector((state: RootState) => state.modal.modalsList);
 
+  const scrollFn = () => {
+    // console.log(1);
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", scrollFn);
+
+    return () => document.removeEventListener("scroll", scrollFn);
+  }, []);
+
+  document.addEventListener("scroll", scrollFn);
+
   return (
     <>
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
       {isModalOpen &&
         modals.map((modal, key) => {

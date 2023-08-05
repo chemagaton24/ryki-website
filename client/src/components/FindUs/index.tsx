@@ -33,7 +33,7 @@ const FindUs = () => {
   };
 
   return (
-    <div className="find-us-block">
+    <section className="find-us-block">
       <div className="find-us-block__map">
         <div className="find-us-block__map-bg">
           <button
@@ -145,7 +145,7 @@ const FindUs = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

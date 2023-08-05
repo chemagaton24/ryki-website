@@ -1,47 +1,28 @@
 import "./style.css";
-import MnpLogo from "./images/partners/mnp.logo.svg";
-import AmlShopLogo from "./images/partners/aml-shop.logo.svg";
-import FaskenLogo from "./images/partners/fasken.logo.svg";
-import FintracCanafeLogo from "./images/partners/fintrac-canafe.logo.svg";
 import UsefulLinksItem from "./UsefulLinksItem";
-import KycAmlPolicyIcon from "./images/useful-links/kyc-aml-policy.icon.svg";
-import PrivacyPolicyIcon from "./images/useful-links/privacy-policy.icon.svg";
-import TermsConditionsIcon from "./images/useful-links/terms-conditions.icon.svg";
 import PhoneIcon from "./images/get-in-touch/phone.icon.svg";
 import LocationIcon from "./images/get-in-touch/location.icon.svg";
 import Button from "../Button";
 import { open } from "../../redux/features/modalSlice";
 import { useDispatch } from "react-redux";
-import { MutableRefObject, useRef } from "react";
-
-const usefulLinksList = [
-  {
-    icon: KycAmlPolicyIcon,
-    title: "KYC & AML Policy",
-    modal: "kyc-aml-policy",
-  },
-  {
-    icon: PrivacyPolicyIcon,
-    title: "Privacy Policy",
-    modal: "privacy-policy",
-  },
-  {
-    icon: TermsConditionsIcon,
-    title: "Terms & Conditions",
-    modal: "terms-of-use",
-  },
-];
+import { useRef, useState } from "react";
+import { LocationDataType, LocationsType } from "../types/getInTouch";
+import { locationData, usefulLinksList } from "./data";
 
 const FindUs = () => {
   const dispatch = useDispatch();
   const canadaPinRef = useRef<HTMLButtonElement | null>(null);
   const camayanIslandRef = useRef<HTMLButtonElement | null>(null);
   const britishVirginIslandsRef = useRef<HTMLButtonElement | null>(null);
+  const [currentLocation, setCurrentLocation] = useState<LocationDataType>(
+    locationData[0]
+  );
 
-  const activatePinLocationFn = (
-    a: MutableRefObject<HTMLButtonElement | null>
-  ) => {
-    console.log(a);
+  const activatePinLocationFn = (location: LocationsType) => {
+    const locationIndex = locationData.findIndex(
+      (a) => a.location === location
+    );
+    setCurrentLocation(locationData[locationIndex]);
   };
 
   return (
@@ -52,7 +33,7 @@ const FindUs = () => {
             aria-label="pin"
             type="button"
             className="find-us-block__map-pin-btn find-us-block__map-pin-btn--active find-us-block__map-pin-btn--pin-1"
-            onClick={() => activatePinLocationFn(canadaPinRef)}
+            onClick={() => activatePinLocationFn("canada")}
             ref={canadaPinRef}
           >
             <span className="icon icon-pin"></span>
@@ -64,7 +45,7 @@ const FindUs = () => {
             aria-label="pin"
             type="button"
             className="find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-2"
-            onClick={() => activatePinLocationFn(camayanIslandRef)}
+            onClick={() => activatePinLocationFn("cayman-island")}
             ref={camayanIslandRef}
           >
             <span className="icon icon-pin"></span>
@@ -73,7 +54,7 @@ const FindUs = () => {
             aria-label="pin"
             type="button"
             className="find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-3"
-            onClick={() => activatePinLocationFn(britishVirginIslandsRef)}
+            onClick={() => activatePinLocationFn("british-virgin-islands")}
             ref={britishVirginIslandsRef}
           >
             <span className="icon icon-pin"></span>
@@ -91,18 +72,11 @@ const FindUs = () => {
         <div className="row content-row">
           <h3 className="find-us-block__partners-heading">Our Partners</h3>
           <div className="find-us-block__partners-logos">
-            <div className="find-us-block__partners-logos-item">
-              <img src={MnpLogo} alt="MNP Logo" />
-            </div>
-            <div className="find-us-block__partners-logos-item">
-              <img src={AmlShopLogo} alt="The AML Shop Logo" />
-            </div>
-            <div className="find-us-block__partners-logos-item">
-              <img src={FaskenLogo} alt="Fasken Logo" />
-            </div>
-            <div className="find-us-block__partners-logos-item">
-              <img src={FintracCanafeLogo} alt="Fintrac Canafe Logo" />
-            </div>
+            {currentLocation.ourPartners.map((item, key) => (
+              <div className="find-us-block__partners-logos-item" key={key}>
+                <img src={item.logo} alt={item.alt} />
+              </div>
+            ))}
           </div>
         </div>
         <div className="row content-row">
@@ -117,22 +91,22 @@ const FindUs = () => {
         </div>
         <div className="row content-row">
           <h3 className="find-us-block__get-in-touch-heading">Get in touch</h3>
-          <div className="find-us-block__get-in-touch-sub-text">
-            RYKI INC. | FINTRAC MSB Registration #M19525430
-          </div>
+          {currentLocation.getInTouch.registrationInfo && (
+            <div className="find-us-block__get-in-touch-sub-text">
+              {currentLocation.getInTouch.registrationInfo}
+            </div>
+          )}
           <ul className="find-us-block__get-in-touch-list">
             <li>
               <div className="find-us-block__get-in-touch-item find-us-block__get-in-touch-item--phone">
                 <img src={PhoneIcon} alt="phone icon" />
-                <span>(226) 240-7189</span>
+                <span>{currentLocation.getInTouch.phone}</span>
               </div>
             </li>
             <li>
               <div className="find-us-block__get-in-touch-item find-us-block__get-in-touch-item--address">
                 <img src={LocationIcon} alt="location icon" />
-                <span>
-                  139 Northfield Drive W. Suite 3. Waterloo, ON, Canada, N2L 5A6
-                </span>
+                <span>{currentLocation.getInTouch.address}</span>
               </div>
             </li>
           </ul>

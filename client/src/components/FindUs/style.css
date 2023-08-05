@@ -373,6 +373,7 @@
 }
 .find-us-block__map-pin-btn--active {
   padding-bottom: 13px;
+  animation: bounce 400ms ease forwards;
 }
 .find-us-block__map-pin-btn--active:after {
   content: "";

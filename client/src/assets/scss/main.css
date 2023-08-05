@@ -132,3 +132,18 @@ ul {
 .dd-number-list > dd:before {
   content: counters(item, ".") ". ";
 }
+
+@keyframes bounce {
+  0% {
+    transform: translate(50%, 0);
+  }
+  20% {
+    transform: translate(50%, 0);
+  }
+  70% {
+    transform: translate(50%, 3px);
+  }
+  100% {
+    transform: translate(50%, 0);
+  }
+}

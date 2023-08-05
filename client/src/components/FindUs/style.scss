@@ -349,6 +349,7 @@
 
       &--active {
         padding-bottom: 13px;
+        animation: bounce 400ms ease forwards;
 
         &:after {
           content: "";

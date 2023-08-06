@@ -247,6 +247,9 @@
   text-align: right;
 }
 .find-us-block__map-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background-image: url("./images/map/bg-mobile.svg");
@@ -256,112 +259,39 @@
 @media only screen and (min-width: 768px) {
   .find-us-block__map-bg {
     background-image: url("./images/map/bg-tablet.svg");
+    background-position: left top;
   }
 }
 @media only screen and (min-width: 1025px) {
   .find-us-block__map-bg {
+    width: calc(50% + 494px);
     background-image: url("./images/map/bg.svg");
-    background-position: right -170px top;
-    background-size: auto 100%;
-  }
-}
-@media only screen and (min-width: 1400px) {
-  .find-us-block__map-bg {
-    background-position: right -120px top;
-  }
-}
-@media only screen and (min-width: 1512px) {
-  .find-us-block__map-bg {
+    background-size: 100% auto;
     background-position: right top;
   }
 }
-.find-us-block__map-pin-btn {
-  display: inline-flex;
+@media only screen and (min-width: 1025px) and (max-width: 1512px) {
+  .find-us-block__map-bg {
+    background-size: 100% auto;
+    background-position: left top;
+  }
+}
+.find-us-block__map-pin {
   position: absolute;
-  transform: translateX(50%);
+  width: 1px;
+  height: 1px;
+}
+.find-us-block__map-pin-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
   z-index: 5;
+  display: inline-flex;
   background-color: transparent;
   border: 0;
   padding: 0;
   cursor: pointer;
-}
-.find-us-block__map-pin-btn--pin-1 {
-  top: 81vw;
-  right: 33vw;
-}
-@media only screen and (min-width: 768px) {
-  .find-us-block__map-pin-btn--pin-1 {
-    top: 48vw;
-    right: 21vw;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  .find-us-block__map-pin-btn--pin-1 {
-    top: 165px;
-    right: 128px;
-  }
-}
-@media only screen and (min-width: 1400px) {
-  .find-us-block__map-pin-btn--pin-1 {
-    right: 178px;
-  }
-}
-@media only screen and (min-width: 1512px) {
-  .find-us-block__map-pin-btn--pin-1 {
-    right: 300px;
-  }
-}
-.find-us-block__map-pin-btn--pin-2 {
-  top: 167vw;
-  right: 54vw;
-}
-@media only screen and (min-width: 768px) {
-  .find-us-block__map-pin-btn--pin-2 {
-    top: 100vw;
-    right: 35vw;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  .find-us-block__map-pin-btn--pin-2 {
-    top: 560px;
-    right: 230px;
-  }
-}
-@media only screen and (min-width: 1400px) {
-  .find-us-block__map-pin-btn--pin-2 {
-    right: 286px;
-  }
-}
-@media only screen and (min-width: 1512px) {
-  .find-us-block__map-pin-btn--pin-2 {
-    right: 400px;
-  }
-}
-.find-us-block__map-pin-btn--pin-3 {
-  top: 156vw;
-  right: 24vw;
-}
-@media only screen and (min-width: 768px) {
-  .find-us-block__map-pin-btn--pin-3 {
-    top: 94vw;
-    right: 15vw;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  .find-us-block__map-pin-btn--pin-3 {
-    top: 515px;
-    right: 90px;
-  }
-}
-@media only screen and (min-width: 1400px) {
-  .find-us-block__map-pin-btn--pin-3 {
-    right: 146px;
-  }
-}
-@media only screen and (min-width: 1512px) {
-  .find-us-block__map-pin-btn--pin-3 {
-    right: 260px;
-  }
 }
 .find-us-block__map-pin-btn .icon-pin {
   display: inline-block;
@@ -371,11 +301,11 @@
   width: 32px;
   height: 40px;
 }
-.find-us-block__map-pin-btn--active {
+.find-us-block__map-pin--active .find-us-block__map-pin-btn {
   padding-bottom: 13px;
   animation: bounce 400ms ease forwards;
 }
-.find-us-block__map-pin-btn--active:after {
+.find-us-block__map-pin--active .find-us-block__map-pin-btn:after {
   content: "";
   display: block;
   position: absolute;
@@ -388,7 +318,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-.find-us-block__map-pin-btn--active .icon-pin {
+.find-us-block__map-pin--active .find-us-block__map-pin-btn .icon-pin {
   background-image: url("./images/map/pin-active.icon.svg");
   width: 48px;
   height: 56px;
@@ -410,8 +340,15 @@
   letter-spacing: -0.02rem;
   border-radius: 2px;
 }
-.find-us-block__map-pin-btn--active .find-us-block__map-pin-btn-location {
+.find-us-block__map-pin--active .find-us-block__map-pin-btn-location {
   display: inline-block;
+}
+.find-us-block__map-pin--british-virgin-islands .find-us-block__map-pin-btn-location {
+  left: 50%;
+  transform: translate(-68%, -100%);
+}
+.find-us-block__map-pin--british-virgin-islands .find-us-block__map-pin-btn-location:after {
+  left: 68%;
 }
 .find-us-block__map-pin-btn-location span {
   white-space: nowrap;
@@ -438,4 +375,70 @@
   border-width: 4px 6.5px 0 6.5px;
   border-color: rgba(60, 139, 210, 0.7) transparent transparent transparent;
   transform: rotate(0deg) translate(-50%, 100%);
+}
+.find-us-block__map-pin--canada {
+  right: 33%;
+  top: 97.5vw;
+}
+@media only screen and (min-width: 768px) {
+  .find-us-block__map-pin--canada {
+    right: 21%;
+    top: 55.8vw;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1512px) {
+  .find-us-block__map-pin--canada {
+    right: 24%;
+    top: calc(11vh + 9.5vw);
+  }
+}
+@media only screen and (min-width: 1513px) {
+  .find-us-block__map-pin--canada {
+    right: 24%;
+    top: calc(7vh + 9.5vw);
+  }
+}
+.find-us-block__map-pin--cayman-islands {
+  right: 51.5%;
+  top: 173vw;
+}
+@media only screen and (min-width: 768px) {
+  .find-us-block__map-pin--cayman-islands {
+    right: 32.5%;
+    top: 104vw;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1512px) {
+  .find-us-block__map-pin--cayman-islands {
+    right: 32%;
+    top: calc(26.4vh + 26.4vw);
+  }
+}
+@media only screen and (min-width: 1513px) {
+  .find-us-block__map-pin--cayman-islands {
+    right: 32%;
+    top: calc(21vh + 23vw);
+  }
+}
+.find-us-block__map-pin--british-virgin-islands {
+  right: 23.5%;
+  top: 166.5vw;
+}
+@media only screen and (min-width: 768px) {
+  .find-us-block__map-pin--british-virgin-islands {
+    right: 15.5%;
+    top: 99.5vw;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1512px) {
+  .find-us-block__map-pin--british-virgin-islands {
+    right: 21%;
+    top: calc(24.5vh + 24.5vw);
+  }
+}
+@media only screen and (min-width: 1513px) {
+  .find-us-block__map-pin--british-virgin-islands {
+    right: 21%;
+    top: calc(20vh + 21.8vw);
+  }
 }

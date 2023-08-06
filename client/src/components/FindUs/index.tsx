@@ -36,56 +36,71 @@ const FindUs = () => {
     <section className="find-us-block">
       <div className="find-us-block__map">
         <div className="find-us-block__map-bg">
-          <button
-            aria-label="pin"
-            type="button"
-            className={`find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-1${
+          <div
+            className={`find-us-block__map-pin find-us-block__map-pin--canada${
               currentLocation.location === "canada" && currentLocation.isActive
-                ? " find-us-block__map-pin-btn--active"
+                ? " find-us-block__map-pin--active"
                 : ""
             }`}
-            onClick={() => activatePinLocationFn("canada")}
-            ref={canadaPinRef}
           >
-            <span className="icon icon-pin"></span>
-            <span className="find-us-block__map-pin-btn-location find-us-block__map-pin-btn-location--canada">
-              Canada
-            </span>
-          </button>
-          <button
-            aria-label="pin"
-            type="button"
-            className={`find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-2${
+            <button
+              aria-label="pin"
+              type="button"
+              className="find-us-block__map-pin-btn find-us-block__map-pin-btn"
+              onClick={() => activatePinLocationFn("canada")}
+              ref={camayanIslandRef}
+            >
+              <span className="icon icon-pin">
+                <span className="find-us-block__map-pin-btn-location">
+                  Canada
+                </span>
+              </span>
+            </button>
+          </div>
+          <div
+            className={`find-us-block__map-pin find-us-block__map-pin--cayman-islands${
               currentLocation.location === "cayman-islands" &&
               currentLocation.isActive
-                ? " find-us-block__map-pin-btn--active"
+                ? " find-us-block__map-pin--active"
                 : ""
             }`}
-            onClick={() => activatePinLocationFn("cayman-islands")}
-            ref={camayanIslandRef}
           >
-            <span className="icon icon-pin"></span>
-            <span className="find-us-block__map-pin-btn-location find-us-block__map-pin-btn-location--canada">
-              Cayman Islands
-            </span>
-          </button>
-          <button
-            aria-label="pin"
-            type="button"
-            className={`find-us-block__map-pin-btn find-us-block__map-pin-btn--pin-3${
+            <button
+              aria-label="pin"
+              type="button"
+              className="find-us-block__map-pin-btn find-us-block__map-pin-btn"
+              onClick={() => activatePinLocationFn("cayman-islands")}
+              ref={camayanIslandRef}
+            >
+              <span className="icon icon-pin">
+                <span className="find-us-block__map-pin-btn-location">
+                  Cayman Islands
+                </span>
+              </span>
+            </button>
+          </div>
+          <div
+            className={`find-us-block__map-pin find-us-block__map-pin--british-virgin-islands${
               currentLocation.location === "british-virgin-islands" &&
               currentLocation.isActive
-                ? " find-us-block__map-pin-btn--active"
+                ? " find-us-block__map-pin--active"
                 : ""
             }`}
-            onClick={() => activatePinLocationFn("british-virgin-islands")}
-            ref={britishVirginIslandsRef}
           >
-            <span className="icon icon-pin"></span>
-            <span className="find-us-block__map-pin-btn-location find-us-block__map-pin-btn-location--canada">
-              <span>British Virgin</span> Islands
-            </span>
-          </button>
+            <button
+              aria-label="pin"
+              type="button"
+              className="find-us-block__map-pin-btn find-us-block__map-pin-btn"
+              onClick={() => activatePinLocationFn("british-virgin-islands")}
+              ref={camayanIslandRef}
+            >
+              <span className="icon icon-pin">
+                <span className="find-us-block__map-pin-btn-location">
+                  <span>British Virgin</span> Islands
+                </span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
       <div className="container">

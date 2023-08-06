@@ -343,12 +343,14 @@
 .find-us-block__map-pin--active .find-us-block__map-pin-btn-location {
   display: inline-block;
 }
-.find-us-block__map-pin--british-virgin-islands .find-us-block__map-pin-btn-location {
-  left: 50%;
-  transform: translate(-68%, -100%);
-}
-.find-us-block__map-pin--british-virgin-islands .find-us-block__map-pin-btn-location:after {
-  left: 68%;
+@media only screen and (max-width: 767px) {
+  .find-us-block__map-pin--british-virgin-islands .find-us-block__map-pin-btn-location {
+    left: 50%;
+    transform: translate(-68%, -100%);
+  }
+  .find-us-block__map-pin--british-virgin-islands .find-us-block__map-pin-btn-location:after {
+    left: 68%;
+  }
 }
 .find-us-block__map-pin-btn-location span {
   white-space: nowrap;

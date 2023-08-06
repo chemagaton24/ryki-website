@@ -333,12 +333,14 @@
             display: inline-block;
           }
 
-          #{$pin}--british-virgin-islands & {
-            left: 50%;
-            transform: translate(-68%, -100%);
+          @media only screen and (max-width: 767px) {
+            #{$pin}--british-virgin-islands & {
+              left: 50%;
+              transform: translate(-68%, -100%);
 
-            &:after {
-              left: 68%;
+              &:after {
+                left: 68%;
+              }
             }
           }
 

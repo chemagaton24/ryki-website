@@ -358,12 +358,20 @@
 .find-us-block__map-pin-btn-location:before {
   content: "";
   display: block;
-  background-image: url("./images/map/countries/canada.icon.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 32px;
   height: 32px;
   margin: 0 auto 8px;
+}
+.find-us-block__map-pin--canada .find-us-block__map-pin-btn-location:before {
+  background-image: url("./images/map/countries/canada.icon.svg");
+}
+.find-us-block__map-pin--cayman-islands .find-us-block__map-pin-btn-location:before {
+  background-image: url("./images/map/countries/cayman-islands.icon.svg");
+}
+.find-us-block__map-pin--british-virgin-islands .find-us-block__map-pin-btn-location:before {
+  background-image: url("./images/map/countries/british-virgin-islands.icon.svg");
 }
 .find-us-block__map-pin-btn-location:after {
   content: "";

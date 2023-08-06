@@ -351,12 +351,23 @@
           &:before {
             content: "";
             display: block;
-            background-image: url("./images/map/countries/canada.icon.svg");
             background-repeat: no-repeat;
             background-size: contain;
             width: 32px;
             height: 32px;
             margin: 0 auto 8px;
+
+            #{$pin}--canada & {
+              background-image: url("./images/map/countries/canada.icon.svg");
+            }
+
+            #{$pin}--cayman-islands & {
+              background-image: url("./images/map/countries/cayman-islands.icon.svg");
+            }
+
+            #{$pin}--british-virgin-islands & {
+              background-image: url("./images/map/countries/british-virgin-islands.icon.svg");
+            }
           }
 
           &:after {

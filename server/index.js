@@ -23,6 +23,10 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/test", (req, res) => {
+  res.send("test");
+});
+
 app.post("/api", (req, res) => {
   const { name, email, telephone, message } = req.body;
 
